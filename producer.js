@@ -6,17 +6,17 @@ const kafka =new Kafka({
 });
 
 
-
+// producer 
 const producer = kafka.producer()
 
-
+// run function 
 const run = async () => {
   // Producing
-  await producer.connect()
+  await producer.connect()//conecting
   await producer.send({
-    topic: 'quickstart-events',
+    topic: 'quickstart-events',//topic topic may be any topic like payment-done,payment anything
     messages: [
-      { value: 'Hello KafkaJS user!' },
+      { value: 'Hello KafkaJS user!' },//mes send 
     ],
   })
 }
